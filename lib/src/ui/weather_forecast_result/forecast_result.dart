@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_training/src/ui/weather_forecast_result/components/components.dart';
+import 'package:flutter_training/src/ui/weather_forecast_result/weather_forecast_result.dart';
 
 class ForecastResult extends StatelessWidget {
   const ForecastResult({required GlobalKey temperatureTextKey, super.key})

@@ -7,8 +7,9 @@ class CloseButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const WeatherActionButtonsFlame(
+    return WeatherActionButtonsFlame(
       buttonText: WeatherActionButtonsConst.closeButton,
+      pressedFunction: () {},
     );
   }
 }

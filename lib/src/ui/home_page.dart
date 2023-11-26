@@ -39,7 +39,7 @@ class _HomePage extends State<HomePage> {
     return Scaffold(
       body: Stack(
         children: [
-          _WeatherForecastResult(temperatureTextKey: _temperatureTextKey),
+          _WeatherConditionResult(temperatureTextKey: _temperatureTextKey),
           if (_temperatureTextPosition != null) ...{
             _WeatherActionButtons(
               temperatureTextPosition: _temperatureTextPosition!,
@@ -52,8 +52,8 @@ class _HomePage extends State<HomePage> {
   }
 }
 
-class _WeatherForecastResult extends StatelessWidget {
-  const _WeatherForecastResult({required GlobalKey temperatureTextKey})
+class _WeatherConditionResult extends StatelessWidget {
+  const _WeatherConditionResult({required GlobalKey temperatureTextKey})
       : _temperatureTextKey = temperatureTextKey;
 
   final GlobalKey _temperatureTextKey;
