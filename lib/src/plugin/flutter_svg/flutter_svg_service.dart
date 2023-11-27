@@ -5,9 +5,9 @@ class FlutterSvgService {
   const FlutterSvgService._();
 
   static Widget fetchSvgImage({
-    required String assetName,
+    required String assetPath,
     required String semanticsLabel,
   }) {
-    return SvgPicture.asset(assetName, semanticsLabel: semanticsLabel);
+    return SvgPicture.asset(assetPath, semanticsLabel: semanticsLabel);
   }
 }
