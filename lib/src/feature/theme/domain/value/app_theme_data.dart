@@ -4,7 +4,7 @@ class AppThemeData {
   const AppThemeData._();
 
   static ThemeData light() {
-    return ThemeData(
+    return ThemeData.light(
       useMaterial3: true,
     );
   }

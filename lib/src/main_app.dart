@@ -6,10 +6,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: AppThemeData.light(),
-      home: const HomePage(),
+      routerConfig: router,
     );
   }
 }
