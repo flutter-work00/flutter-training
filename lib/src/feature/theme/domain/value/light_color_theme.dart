@@ -5,6 +5,6 @@ class LightColorTheme {
   const LightColorTheme._();
   static const maxTemperature = Colors.red;
   static const minTemperature = Colors.blue;
-  static const rootPageBackground = Colors.green;
+  static const launchPageBackground = Colors.green;
   static const weatherActionButton = Colors.blue;
 }

@@ -10,7 +10,8 @@ class CloseButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return WeatherActionButtonsFlame(
       buttonText: WeatherActionButtonsConst.closeButton,
-      pressedFunction: () async => GoRouterService.toRootPage(context: context),
+      pressedFunction: () async =>
+          GoRouterService.toLaunchPage(context: context),
     );
   }
 }

@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_training/src/plugin/go_router/go_router.dart';
 import 'package:flutter_training/src/utility/utility.dart';
 
-class RootPage extends StatefulWidget {
-  const RootPage({super.key});
+class LaunchPage extends StatefulWidget {
+  const LaunchPage({super.key});
   @override
-  State<RootPage> createState() => _RootPage();
+  State<LaunchPage> createState() => _LaunchPage();
 }
 
-class _RootPage extends State<RootPage> {
+class _LaunchPage extends State<LaunchPage> {
   @override
   void initState() {
     super.initState();
@@ -18,14 +18,14 @@ class _RootPage extends State<RootPage> {
   @override
   Future<void> didChangeDependencies() async {
     super.didChangeDependencies();
-    await GoRouterService.toHomePage(context: context);
+    await GoRouterService.toWeatherPage(context: context);
   }
 
   @override
   Widget build(BuildContext context) {
     return PopScope(
       canPop: CanPopStatus.unPop.value,
-      child: ColoredBox(color: context.colorTheme.rootPageBackground!),
+      child: ColoredBox(color: context.colorTheme.launchPageBackground!),
     );
   }
 }

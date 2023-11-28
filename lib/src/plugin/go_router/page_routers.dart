@@ -4,17 +4,17 @@ import 'package:go_router/go_router.dart';
 final router = GoRouter(
   routes: <RouteBase>[
     GoRoute(
-      path: RooterConst.homePagePath,
-      name: RooterConst.homePageName,
+      path: RooterConst.launchPagePath,
+      name: RooterConst.launchPageName,
       builder: (context, state) {
-        return const HomePage();
+        return const LaunchPage();
       },
       routes: <RouteBase>[
         GoRoute(
-          path: RooterConst.rootPagePath,
-          name: RooterConst.rootPageName,
+          path: RooterConst.weatherPagePath,
+          name: RooterConst.weatherPageName,
           builder: (context, state) {
-            return const RootPage();
+            return const WeatherPage();
           },
         ),
       ],

@@ -9,9 +9,9 @@ class AppThemeData {
       useMaterial3: true,
       extensions: const <ThemeExtension<ColorTheme>>[
         ColorTheme(
+          launchPageBackground: LightColorTheme.launchPageBackground,
           maxTemperature: LightColorTheme.maxTemperature,
           minTemperature: LightColorTheme.minTemperature,
-          rootPageBackground: LightColorTheme.rootPageBackground,
           weatherActionButton: LightColorTheme.weatherActionButton,
         ),
       ],

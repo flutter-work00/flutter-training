@@ -6,15 +6,15 @@ import 'package:go_router/go_router.dart';
 class GoRouterService {
   const GoRouterService._();
 
-  static Future<void> toHomePage({required BuildContext context}) async {
-    await Future<void>.delayed(AppDuration.rootPageStayTime);
+  static Future<void> toWeatherPage({required BuildContext context}) async {
+    await Future<void>.delayed(AppDuration.launchPageStayTime);
     if (!context.mounted) {
       return;
     }
-    context.goNamed(RooterConst.homePageName);
+    context.goNamed(RooterConst.weatherPageName);
   }
 
-  static void toRootPage({required BuildContext context}) {
-    context.goNamed(RooterConst.rootPageName);
+  static void toLaunchPage({required BuildContext context}) {
+    context.goNamed(RooterConst.launchPageName);
   }
 }

@@ -3,10 +3,10 @@ class ErrorMessageConst {
 }
 
 class RooterConst {
-  static const homePageName = 'homePage';
-  static const homePagePath = '/';
-  static const rootPageName = 'rootPage';
-  static const rootPagePath = 'rootPage';
+  static const weatherPageName = 'weatherPage';
+  static const weatherPagePath = 'weatherPage';
+  static const launchPageName = 'launchPage';
+  static const launchPagePath = '/';
 }
 
 class TemperatureConst {

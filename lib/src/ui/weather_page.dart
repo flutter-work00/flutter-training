@@ -3,13 +3,13 @@ import 'package:flutter_training/src/ui/weather_action_buttons/weather_action_bu
     as buttons;
 import 'package:flutter_training/src/ui/weather_forecast_result/weather_forecast_result.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class WeatherPage extends StatefulWidget {
+  const WeatherPage({super.key});
   @override
-  State<HomePage> createState() => _HomePage();
+  State<WeatherPage> createState() => _WeatherPage();
 }
 
-class _HomePage extends State<HomePage> {
+class _WeatherPage extends State<WeatherPage> {
   final _temperatureTextKey = GlobalKey();
   Offset? _temperatureTextPosition;
   Size? _temperatureTextSize;
