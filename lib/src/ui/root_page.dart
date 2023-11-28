@@ -25,7 +25,7 @@ class _RootPage extends State<RootPage> {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: CanPopStatus.unPop.value,
-      child: const ColoredBox(color: Colors.green),
+      child: ColoredBox(color: context.colorTheme.rootPageBackground!),
     );
   }
 }

@@ -18,7 +18,8 @@ class WeatherActionButtonsFlame extends StatelessWidget {
         onPressed: _pressedFunction,
         child: Text(
           _buttonText,
-          style: context.textTheme.labelLarge!.copyWith(color: Colors.blue),
+          style: context.textTheme.labelLarge!
+              .copyWith(color: context.colorTheme.w),
           textAlign: TextAlign.center,
         ),
       ),
