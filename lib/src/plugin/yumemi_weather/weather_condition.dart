@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_training/gen/assets.gen.dart';
-import 'package:flutter_training/src/plugin/flutter_svg/flutter_svg.dart';
 
 enum WeatherCondition {
   cloudy,
@@ -8,17 +7,8 @@ enum WeatherCondition {
   sunny;
 
   Widget get image => switch (this) {
-        cloudy => FlutterSvgService.fetchSvgImage(
-            assetPath: Assets.images.cloudy.path,
-            semanticsLabel: name,
-          ),
-        rainy => FlutterSvgService.fetchSvgImage(
-            assetPath: Assets.images.rainy.path,
-            semanticsLabel: name,
-          ),
-        sunny => FlutterSvgService.fetchSvgImage(
-            assetPath: Assets.images.sunny.path,
-            semanticsLabel: name,
-          ),
+        cloudy => Assets.images.cloudy.svg(semanticsLabel: name),
+        rainy => Assets.images.rainy.svg(semanticsLabel: name),
+        sunny => Assets.images.sunny.svg(semanticsLabel: name),
       };
 }
