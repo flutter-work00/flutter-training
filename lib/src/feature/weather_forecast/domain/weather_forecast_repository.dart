@@ -13,5 +13,7 @@ final weatherForecastRepositoryProvider =
 abstract class WeatherForecastRepository {
   // Remote
 
-  Result<WeatherCondition, Exception> fetchWeatherCondition();
+  Result<WeatherCondition, Exception> fetchWeatherCondition({
+    required String targetArea,
+  });
 }

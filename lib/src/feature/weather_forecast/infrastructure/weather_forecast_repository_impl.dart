@@ -13,11 +13,15 @@ class WeatherForecastRepositoryImpl extends WeatherForecastRepository {
   // Remote
 
   @override
-  Result<WeatherCondition, Exception> fetchWeatherCondition() {
+  Result<WeatherCondition, Exception> fetchWeatherCondition({
+    required String targetArea,
+  }) {
     try {
       late WeatherCondition? weatherCondition;
 
-      final result = _weatherForecastDatasouce.fetchWeatherCondition();
+      final result = _weatherForecastDatasouce.fetchWeatherCondition(
+        targetArea: targetArea,
+      );
       if (result != null) {
         weatherCondition = WeatherCondition.values.byNameOrNull(name: result);
         if (weatherCondition != null) {

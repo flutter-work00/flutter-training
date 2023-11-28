@@ -11,7 +11,8 @@ class FetchWeatherForecastUsecaseImpl implements FetchWeatherForecastUsecase {
 
   @override
   WeatherCondition execute() {
-    return _weatherForecastRepository.fetchWeatherCondition().unwrap
-        as WeatherCondition;
+    return _weatherForecastRepository
+        .fetchWeatherCondition(targetArea: WeatherForecastConst.area)
+        .unwrap as WeatherCondition;
   }
 }

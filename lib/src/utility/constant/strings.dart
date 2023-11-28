@@ -18,3 +18,7 @@ class WeatherActionButtonsConst {
   static const closeButton = 'Close';
   static const reloadButton = 'Reload';
 }
+
+class WeatherForecastConst {
+  static const area = 'tokyo';
+}
