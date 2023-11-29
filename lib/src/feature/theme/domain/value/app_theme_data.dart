@@ -6,7 +6,7 @@ class AppThemeData {
 
   static ThemeData light() {
     return ThemeData(
-      useMaterial3: true,
+      useMaterial3: false,
       extensions: const <ThemeExtension<ColorTheme>>[
         ColorTheme(
           launchPageBackground: LightColorTheme.launchPageBackground,
