@@ -16,6 +16,6 @@ class WeatherForecastDatasouce {
   final YumemiWeather _weatherClient;
 
   String? fetchWeatherCondition({required String targetArea}) {
-    return _weatherClient.fetchThrowsWeather(targetArea);
+    return _weatherClient.fetchWeather(targetArea);
   }
 }
