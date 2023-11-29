@@ -1,1 +1,1 @@
-export 'weather_condition_controller.dart';
+export 'weather_information_controller.dart';

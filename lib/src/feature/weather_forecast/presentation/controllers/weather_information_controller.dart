@@ -4,30 +4,29 @@ import 'package:flutter_training/src/feature/weather_forecast/presentation/provi
 import 'package:flutter_training/src/ui/common_components/dialog/dialog.dart';
 import 'package:flutter_training/src/utility/utility.dart';
 
-final weatherConditionControllerProvider =
-    Provider.autoDispose<WeatherConditionController>(
-  (ref) => WeatherConditionController(
+final weatherInformationControllerProvider =
+    Provider.autoDispose<WeatherInformationController>(
+  (ref) => WeatherInformationController(
     fetchWeatherForecastUsecase: ref.watch(fetchWeatherForecastUsecaseProvider),
-    forecastResultImageNotifier:
-        ref.watch(weatherConditionImageProvider.notifier),
+    forecastResultImageNotifier: ref.watch(weatherInformationProvider.notifier),
   ),
 );
 
-class WeatherConditionController {
-  WeatherConditionController({
+class WeatherInformationController {
+  WeatherInformationController({
     required FetchWeatherForecastUsecase fetchWeatherForecastUsecase,
-    required WeatherConditionImageNotifier forecastResultImageNotifier,
+    required WeatherInformationNotifier forecastResultImageNotifier,
   })  : _fetchWeatherForecastUsecase = fetchWeatherForecastUsecase,
         _forecastResultImageNotifier = forecastResultImageNotifier;
 
   final FetchWeatherForecastUsecase _fetchWeatherForecastUsecase;
-  final WeatherConditionImageNotifier _forecastResultImageNotifier;
+  final WeatherInformationNotifier _forecastResultImageNotifier;
 
-  void fetchWeatherForecastImage() {
+  void fetchWeatherForecast() {
     try {
-      final weatherCondition = _fetchWeatherForecastUsecase.execute();
-      _forecastResultImageNotifier.saveForecastResultImage(
-        weatherCondition: weatherCondition,
+      final weatherInformation = _fetchWeatherForecastUsecase.execute();
+      _forecastResultImageNotifier.saveWeatherInformation(
+        weatherInformation: weatherInformation,
       );
     } on WeatherForecastException catch (e) {
       // ignore: discarded_futures

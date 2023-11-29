@@ -11,9 +11,8 @@ class ReloadButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return WeatherActionButtonsFlame(
       buttonText: WeatherActionButtonsConst.reloadButton,
-      pressedFunction: () => ref
-          .read(weatherConditionControllerProvider)
-          .fetchWeatherForecastImage(),
+      pressedFunction: () =>
+          ref.read(weatherInformationControllerProvider).fetchWeatherForecast(),
     );
   }
 }

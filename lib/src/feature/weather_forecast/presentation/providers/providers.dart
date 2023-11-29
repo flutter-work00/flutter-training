@@ -1,1 +1,1 @@
-export 'weather_condition_image_notifier.dart';
+export 'weather_information_notifier.dart';

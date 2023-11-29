@@ -1,6 +1,5 @@
 import 'package:flutter_training/src/feature/weather_forecast/domain/domain.dart';
 import 'package:flutter_training/src/feature/weather_forecast/infrastructure/infrastructure.dart';
-import 'package:flutter_training/src/plugin/yumemi_weather/yumemi_weather.dart';
 import 'package:flutter_training/src/utility/utility.dart';
 import 'package:yumemi_weather/yumemi_weather.dart';
 
@@ -14,22 +13,17 @@ class WeatherForecastRepositoryImpl extends WeatherForecastRepository {
   // Remote
 
   @override
-  Result<WeatherCondition, Exception> fetchWeatherCondition({
-    required String targetArea,
+  Result<WeatherInformation, Exception> fetchWeatherForecast({
+    required WeatherRequest weatherRequest,
   }) {
     try {
-      late WeatherCondition? weatherCondition;
+      late WeatherInformation? weatherInformation;
 
-      final result = _weatherForecastDatasouce.fetchWeatherCondition(
-        targetArea: targetArea,
+      final result = _weatherForecastDatasouce.fetchWeatherForecast(
+        targetJsonString: weatherRequest.toJson(),
       );
-      if (result != null) {
-        weatherCondition = WeatherCondition.values.byNameOrNull(name: result);
-        if (weatherCondition != null) {
-          return Success(value: weatherCondition);
-        }
-      }
-      throw UnknownException();
+      weatherInformation = WeatherInformation.fromJson(result);
+      return Success(value: weatherInformation);
     } on YumemiWeatherError catch (error) {
       return Failure(
         exception: onWeatherForecastException(error: error),

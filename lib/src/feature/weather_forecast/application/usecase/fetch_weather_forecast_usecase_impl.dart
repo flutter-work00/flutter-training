@@ -1,5 +1,4 @@
 import 'package:flutter_training/src/feature/weather_forecast/domain/domain.dart';
-import 'package:flutter_training/src/plugin/yumemi_weather/yumemi_weather.dart';
 import 'package:flutter_training/src/utility/utility.dart';
 
 class FetchWeatherForecastUsecaseImpl implements FetchWeatherForecastUsecase {
@@ -10,9 +9,9 @@ class FetchWeatherForecastUsecaseImpl implements FetchWeatherForecastUsecase {
   final WeatherForecastRepository _weatherForecastRepository;
 
   @override
-  WeatherCondition execute() {
+  WeatherInformation execute() {
     return _weatherForecastRepository
-        .fetchWeatherCondition(targetArea: WeatherForecastConst.area)
-        .unwrap as WeatherCondition;
+        .fetchWeatherForecast(weatherRequest: WeatherRequest.create())
+        .unwrap as WeatherInformation;
   }
 }
