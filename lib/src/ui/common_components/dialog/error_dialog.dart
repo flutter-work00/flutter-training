@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_training/src/plugin/go_router/go_router.dart';
 import 'package:flutter_training/src/ui/common_components/dialog/dialog.dart';
+import 'package:flutter_training/src/utility/constant/constant.dart';
 
 class ErrorDialog extends StatelessWidget {
   const ErrorDialog({required String message, super.key})
@@ -11,10 +13,10 @@ class ErrorDialog extends StatelessWidget {
     return AppDialogFlame(
       content: AlertDialog(
         title: Text(_titleText),
-        actions: [
+        actions: const [
           TextButton(
-            child: const Text('OK'),
-            onPressed: () {},
+            onPressed: GoRouterService.pop,
+            child: Text(DialogConst.ok),
           ),
         ],
       ),

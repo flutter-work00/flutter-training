@@ -2,6 +2,10 @@ class ErrorMessageConst {
   static const fetchWeatherCondition = '天気の取得に失敗しました';
 }
 
+class DialogConst {
+  static const ok = 'OK';
+}
+
 class RooterConst {
   static const weatherPageName = 'weatherPage';
   static const weatherPagePath = 'weatherPage';
