@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_training/src/feature/weather_forecast/domain/domain.dart';
 import 'package:flutter_training/src/feature/weather_forecast/presentation/providers/providers.dart';
+import 'package:flutter_training/src/ui/common_components/dialog/dialog.dart';
+import 'package:flutter_training/src/utility/utility.dart';
 
 final weatherConditionControllerProvider =
     Provider.autoDispose<WeatherConditionController>(
@@ -29,7 +30,11 @@ class WeatherConditionController {
         weatherCondition: weatherCondition,
       );
     } on WeatherForecastException catch (e) {
-      debugPrint(e.toString());
+      // ignore: discarded_futures
+      showErrorDialog(
+        context: weatherPageContext,
+        errorDialog: ErrorDialog(message: e.message),
+      );
     }
   }
 }

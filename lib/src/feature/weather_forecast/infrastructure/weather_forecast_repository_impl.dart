@@ -30,10 +30,13 @@ class WeatherForecastRepositoryImpl extends WeatherForecastRepository {
         }
       }
       throw UnknownException();
-    } on Exception catch (error) {
+    } on YumemiWeatherError catch (error) {
       return Failure(
-        exception:
-            onWeatherForecastException(error: error as YumemiWeatherError),
+        exception: onWeatherForecastException(error: error),
+      );
+    } on Exception catch (_) {
+      return Failure(
+        exception: UnknownException(),
       );
     }
   }

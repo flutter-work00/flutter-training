@@ -5,6 +5,9 @@ import 'package:flutter_training/src/ui/weather_forecast_result/weather_forecast
 
 class WeatherPage extends StatefulWidget {
   const WeatherPage({super.key});
+  // ignore: diagnostic_describe_all_properties
+  static final scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   State<WeatherPage> createState() => _WeatherPage();
 }
@@ -37,6 +40,7 @@ class _WeatherPage extends State<WeatherPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: WeatherPage.scaffoldKey,
       body: Stack(
         children: [
           _WeatherConditionResult(temperatureTextKey: _temperatureTextKey),

@@ -1,3 +1,4 @@
+import 'package:flutter_training/src/utility/constant/constant.dart';
 import 'package:flutter_training/src/utility/exceptions/exceptions.dart';
 import 'package:yumemi_weather/yumemi_weather.dart';
 
@@ -12,16 +13,16 @@ class WeatherForecastException implements AppException {
 class InvalidParameterException extends WeatherForecastException {
   InvalidParameterException()
       : super(
-          code: 'invalid-parameter',
-          message: '対象のエリアはサポートしていません',
+          code: WeatherForecastExceptionConst.invalidParameterCode,
+          message: WeatherForecastExceptionConst.invalidParameterMessage,
         );
 }
 
 class UnknownException extends WeatherForecastException {
   UnknownException()
       : super(
-          code: 'unknown',
-          message: 'エラーが発生しました',
+          code: WeatherForecastExceptionConst.unknownCode,
+          message: WeatherForecastExceptionConst.unknownMessage,
         );
 }
 

@@ -22,3 +22,10 @@ class WeatherActionButtonsConst {
 class WeatherForecastConst {
   static const area = 'tokyo';
 }
+
+class WeatherForecastExceptionConst {
+  static const invalidParameterCode = 'invalid-parameter';
+  static const invalidParameterMessage = '対象のエリアはサポートしていません';
+  static const unknownCode = 'unknown';
+  static const unknownMessage = 'エラーが発生しました';
+}
