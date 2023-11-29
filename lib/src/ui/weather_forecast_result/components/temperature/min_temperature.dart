@@ -7,6 +7,6 @@ class MinTemperature extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TemperatureFlame(textColors: context.colorTheme.maxTemperature!);
+    return TemperatureFlame(textColors: context.colorTheme.minTemperature!);
   }
 }

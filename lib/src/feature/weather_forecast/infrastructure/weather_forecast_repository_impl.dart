@@ -2,6 +2,7 @@ import 'package:flutter_training/src/feature/weather_forecast/domain/domain.dart
 import 'package:flutter_training/src/feature/weather_forecast/infrastructure/infrastructure.dart';
 import 'package:flutter_training/src/plugin/yumemi_weather/yumemi_weather.dart';
 import 'package:flutter_training/src/utility/utility.dart';
+import 'package:yumemi_weather/yumemi_weather.dart';
 
 class WeatherForecastRepositoryImpl extends WeatherForecastRepository {
   WeatherForecastRepositoryImpl({
@@ -28,9 +29,12 @@ class WeatherForecastRepositoryImpl extends WeatherForecastRepository {
           return Success(value: weatherCondition);
         }
       }
-      throw FetchWeatherConditionException();
-    } on Exception catch (_) {
-      return Failure(exception: FetchWeatherConditionException());
+      throw UnknownException();
+    } on Exception catch (error) {
+      return Failure(
+        exception:
+            onWeatherForecastException(error: error as YumemiWeatherError),
+      );
     }
   }
 }
