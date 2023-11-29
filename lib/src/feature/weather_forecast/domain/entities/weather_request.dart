@@ -1,28 +1,22 @@
-import 'dart:convert';
-
 import 'package:flutter_training/src/utility/constant/constant.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class WeatherRequest {
-  const WeatherRequest({
-    required this.targetArea,
-    required this.targetDate,
-  });
+part 'weather_request.freezed.dart';
+part 'weather_request.g.dart';
+
+@freezed
+class WeatherRequest with _$WeatherRequest {
+  const factory WeatherRequest({
+    required String area,
+    required String date,
+  }) = _WeatherRequest;
 
   factory WeatherRequest.create() {
     return WeatherRequest(
-      targetArea: WeatherRequestConst.sampleArea,
-      targetDate: DateTime.now(),
+      area: WeatherRequestConst.sampleArea,
+      date: DateTime.now().toIso8601String(),
     );
   }
-
-  String toJson() {
-    final weatherRequest = {
-      WeatherRequestConst.area: targetArea,
-      WeatherRequestConst.date: targetDate.toIso8601String(),
-    };
-    return jsonEncode(weatherRequest);
-  }
-
-  final String targetArea;
-  final DateTime targetDate;
+  factory WeatherRequest.fromJson(Map<String, dynamic> json) =>
+      _$WeatherRequestFromJson(json);
 }

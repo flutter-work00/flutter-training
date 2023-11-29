@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter_training/src/feature/weather_forecast/domain/domain.dart';
 import 'package:flutter_training/src/feature/weather_forecast/infrastructure/infrastructure.dart';
 import 'package:flutter_training/src/utility/utility.dart';
@@ -20,7 +22,7 @@ class WeatherForecastRepositoryImpl extends WeatherForecastRepository {
       late WeatherInformation? weatherInformation;
 
       final result = _weatherForecastDatasouce.fetchWeatherForecast(
-        targetJsonString: weatherRequest.toJson(),
+        targetJsonString: jsonEncode(weatherRequest),
       );
       weatherInformation = WeatherInformation.fromJson(result);
       return Success(value: weatherInformation);
