@@ -1,4 +1,4 @@
-Analyzing /Users/shisoshiso/work/flutter-training ...
+```mermaid
 flowchart TB
   subgraph Arrows
     direction LR
@@ -34,3 +34,4 @@ flowchart TB
   weatherInformationProvider ==> weatherInformationControllerProvider;
   weatherForecastRepositoryProvider ==> fetchWeatherForecastUsecaseProvider;
   weatherForecastDatasouceProvider ==> weatherForecastRepositoryProvider;
+```
