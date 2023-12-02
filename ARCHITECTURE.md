@@ -4,7 +4,7 @@
 
 ## アーキテクチャ
 
-![architecture-figure](./.github/images/architecture-figure.png"アーキテクチャ図")
+![architecture-figure](./.github/images/architecture-figure.png "アーキテクチャ図")
 
 ### Presentation
  `Presentation`層は UIを管理しつつユーザーからのイベント処理を受け付け、ウィジェットを用いて画面の構築を担当する.
