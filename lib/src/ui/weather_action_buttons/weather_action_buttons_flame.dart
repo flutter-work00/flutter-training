@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_training/src/utility/extension/build_context.dart';
+import 'package:flutter_training/src/utilities/extensions/build_context.dart';
 
 class WeatherActionButtonsFlame extends StatelessWidget {
   const WeatherActionButtonsFlame({

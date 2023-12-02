@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_training/src/feature/weather_forecast/presentation/providers/providers.dart';
+import 'package:flutter_training/src/features/weather_forecast/presentation/providers/providers.dart';
 import 'package:flutter_training/src/ui/weather_forecast_result/components/temperature/temperature.dart';
-import 'package:flutter_training/src/utility/utility.dart';
+import 'package:flutter_training/src/utilities/utility.dart';
 
 class MaxTemperature extends ConsumerWidget {
   const MaxTemperature({super.key});

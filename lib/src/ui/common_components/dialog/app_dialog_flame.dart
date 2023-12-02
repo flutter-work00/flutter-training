@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_training/src/utility/utility.dart';
+import 'package:flutter_training/src/utilities/utility.dart';
 
 class AppDialogFlame extends StatelessWidget {
   const AppDialogFlame({required Widget content, super.key})

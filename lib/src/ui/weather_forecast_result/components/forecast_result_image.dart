@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_training/src/feature/weather_forecast/presentation/providers/providers.dart';
+import 'package:flutter_training/src/features/weather_forecast/presentation/providers/providers.dart';
 
 class ForecastResultImage extends StatelessWidget {
   const ForecastResultImage({super.key});

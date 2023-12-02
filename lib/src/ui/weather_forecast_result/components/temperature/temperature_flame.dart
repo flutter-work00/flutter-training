@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_training/src/utility/constant/constant.dart';
-import 'package:flutter_training/src/utility/extension/extension.dart';
+import 'package:flutter_training/src/utilities/constants/constant.dart';
+import 'package:flutter_training/src/utilities/extensions/extension.dart';
 
 class TemperatureFlame extends StatelessWidget {
   const TemperatureFlame({

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_training/src/plugin/go_router/go_router.dart';
+import 'package:flutter_training/src/plugins/go_router/go_router.dart';
 import 'package:flutter_training/src/ui/common_components/dialog/dialog.dart';
-import 'package:flutter_training/src/utility/constant/constant.dart';
+import 'package:flutter_training/src/utilities/constants/constant.dart';
 
 class ErrorDialog extends StatelessWidget {
   const ErrorDialog({required String message, super.key})
