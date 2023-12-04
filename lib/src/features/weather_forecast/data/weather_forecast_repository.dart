@@ -27,11 +27,11 @@ class WeatherForecastRepository {
       );
     } on CheckedFromJsonException catch (_) {
       return Result.failure(
-        exception: UnknownException(),
+        exception: InvalidResponseException(),
       );
     } on FormatException catch (_) {
       return Result.failure(
-        exception: UnknownException(),
+        exception: InvalidResponseException(),
       );
     } on Exception catch (_) {
       return Result.failure(

@@ -26,6 +26,8 @@ class WeatherActionButtonsConst {
 class WeatherForecastExceptionConst {
   static const invalidParameterCode = 'invalid-parameter';
   static const invalidParameterMessage = '対象のエリアはサポートしていません';
+  static const invalidResponseCode = 'invalid-response';
+  static const invalidResponseMessage = 'レスポンスのフォーマットが不正です';
   static const unknownCode = 'unknown';
   static const unknownMessage = 'エラーが発生しました';
 }

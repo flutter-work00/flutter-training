@@ -18,6 +18,14 @@ class InvalidParameterException extends WeatherForecastException {
         );
 }
 
+class InvalidResponseException extends WeatherForecastException {
+  InvalidResponseException()
+      : super(
+          code: WeatherForecastExceptionConst.invalidResponseCode,
+          message: WeatherForecastExceptionConst.invalidResponseMessage,
+        );
+}
+
 class UnknownException extends WeatherForecastException {
   UnknownException()
       : super(
