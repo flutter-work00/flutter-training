@@ -13,28 +13,28 @@ class WeatherForecastRepository {
 
   // Remote
 
-  Result<WeatherInformation, Exception> fetchWeatherForecast({
+  Result<WeatherInformation, WeatherForecastException> fetchWeatherForecast({
     required WeatherForecastRequest weatherForecastRequest,
   }) {
     try {
       final weatherInformation = _weatherForecastDatasouce.fetchWeatherForecast(
         weatherForecastRequest: weatherForecastRequest,
       );
-      return Success(value: weatherInformation);
+      return Result.success(value: weatherInformation);
     } on YumemiWeatherError catch (error) {
-      return Failure(
+      return Result.failure(
         exception: onWeatherForecastException(error: error),
       );
     } on CheckedFromJsonException catch (_) {
-      return Failure(
+      return Result.failure(
         exception: UnknownException(),
       );
     } on FormatException catch (_) {
-      return Failure(
+      return Result.failure(
         exception: UnknownException(),
       );
     } on Exception catch (_) {
-      return Failure(
+      return Result.failure(
         exception: UnknownException(),
       );
     }

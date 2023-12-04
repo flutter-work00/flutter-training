@@ -1,20 +1,26 @@
-sealed class Result<S, E extends Exception> {
-  const Result();
-}
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-final class Success<S, E extends Exception> extends Result<S, E> {
-  const Success({required this.value});
-  final S value;
-}
+part 'result.freezed.dart';
 
-final class Failure<S, E extends Exception> extends Result<S, E> {
-  const Failure({required this.exception});
-  final E exception;
-}
+@freezed
+class Result<T, R> with _$Result<T, R> {
+  const Result._();
+  const factory Result.success({required T value}) = Success<T, R>;
+  const factory Result.failure({required R exception}) = Failure<T, R>;
 
-extension ResultExtension on Result<dynamic, Exception> {
+  T? get valueOrNull => when(
+        success: (value) => value,
+        failure: (_) => null,
+      );
+
+  R? get exceptionOrNull => when(
+        success: (_) => null,
+        failure: (exception) => exception,
+      );
+
   dynamic get unwrap => switch (this) {
         Success() => (this as Success).value,
-        Failure() => throw (this as Failure).exception,
+        Failure() => (this as Failure).exception,
+        Result<T, R>() => null,
       };
 }
