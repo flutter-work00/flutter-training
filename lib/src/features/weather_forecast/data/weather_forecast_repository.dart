@@ -1,6 +1,7 @@
 import 'package:flutter_training/src/features/weather_forecast/data/data_sources/data_sources.dart';
 import 'package:flutter_training/src/features/weather_forecast/domain/domain.dart';
 import 'package:flutter_training/src/utilities/utilities.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:yumemi_weather/yumemi_weather.dart';
 
 class WeatherForecastRepository {
@@ -23,6 +24,14 @@ class WeatherForecastRepository {
     } on YumemiWeatherError catch (error) {
       return Failure(
         exception: onWeatherForecastException(error: error),
+      );
+    } on CheckedFromJsonException catch (_) {
+      return Failure(
+        exception: UnknownException(),
+      );
+    } on FormatException catch (_) {
+      return Failure(
+        exception: UnknownException(),
       );
     } on Exception catch (_) {
       return Failure(
