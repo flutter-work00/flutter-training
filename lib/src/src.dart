@@ -1,5 +1,5 @@
-export 'features/feature.dart';
+export 'features/features.dart';
 export 'main_app.dart';
-export 'plugins/plugin.dart';
+export 'plugins/plugins.dart';
 export 'ui/ui.dart';
-export 'utilities/utility.dart';
+export 'utilities/utilities.dart';

@@ -1,8 +1,6 @@
-import 'dart:convert';
-
 import 'package:flutter_training/src/features/weather_forecast/data/data_sources/data_sources.dart';
 import 'package:flutter_training/src/features/weather_forecast/domain/domain.dart';
-import 'package:flutter_training/src/utilities/utility.dart';
+import 'package:flutter_training/src/utilities/utilities.dart';
 import 'package:yumemi_weather/yumemi_weather.dart';
 
 class WeatherForecastRepository {
@@ -18,12 +16,9 @@ class WeatherForecastRepository {
     required WeatherForecastRequest weatherForecastRequest,
   }) {
     try {
-      late WeatherInformation? weatherInformation;
-
-      final result = _weatherForecastDatasouce.fetchWeatherForecast(
-        targetData: jsonEncode(weatherForecastRequest),
+      final weatherInformation = _weatherForecastDatasouce.fetchWeatherForecast(
+        weatherForecastRequest: weatherForecastRequest,
       );
-      weatherInformation = WeatherInformation.fromJson(result);
       return Success(value: weatherInformation);
     } on YumemiWeatherError catch (error) {
       return Failure(

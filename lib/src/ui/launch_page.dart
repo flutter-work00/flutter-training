@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_training/src/plugins/go_router/go_router.dart';
-import 'package:flutter_training/src/utilities/utility.dart';
+import 'package:flutter_training/src/utilities/utilities.dart';
 
 class LaunchPage extends StatefulWidget {
   const LaunchPage({super.key});

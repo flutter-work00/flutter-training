@@ -16,7 +16,6 @@ class RooterConst {
 
 class TemperatureConst {
   static const celsius = '°C';
-  static const emptyTemperature = '**';
 }
 
 class WeatherActionButtonsConst {

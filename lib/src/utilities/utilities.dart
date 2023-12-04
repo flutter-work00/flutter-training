@@ -7,4 +7,3 @@ export 'extensions/extensions.dart';
 export 'mixin/mixin.dart';
 export 'result.dart';
 export 'services/services.dart';
-export 'utility.dart';

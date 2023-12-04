@@ -15,7 +15,6 @@ class ForecastResultImage extends StatelessWidget {
           builder: (context, ref, _) {
             return ref
                     .watch(weatherInformationProvider)
-                    .weatherInformation
                     .weatherConditionImage ??
                 const Placeholder();
           },

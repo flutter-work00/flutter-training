@@ -4,8 +4,9 @@ class AppEmpty {
   const AppEmpty._();
 
   static const elevation = 0.0;
-  static const weatherInformation = WeatherInformation(
-    weatherConditionImage: null,
+  static const temperature = '**';
+  static final weatherInformation = WeatherInformation(
+    weatherCondition: null,
     maxTemperature: null,
     minTemperature: null,
   );

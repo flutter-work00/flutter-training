@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_training/src/utilities/constants/constant.dart';
-import 'package:flutter_training/src/utilities/extensions/extension.dart';
+import 'package:flutter_training/src/utilities/utilities.dart';
 
 class TemperatureFlame extends StatelessWidget {
   const TemperatureFlame({
     required Color textColors,
     String? temperature,
     super.key,
-  })  : _temperature = temperature ?? TemperatureConst.emptyTemperature,
+  })  : _temperature = temperature ?? AppEmpty.temperature,
         _textColors = textColors;
 
   final String _temperature;

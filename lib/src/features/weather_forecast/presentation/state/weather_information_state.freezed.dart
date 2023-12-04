@@ -16,8 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$WeatherInformationState {
-  WeatherInformation get weatherInformation =>
-      throw _privateConstructorUsedError;
+  Widget? get weatherConditionImage => throw _privateConstructorUsedError;
+  String? get maxTemperature => throw _privateConstructorUsedError;
+  String? get minTemperature => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $WeatherInformationStateCopyWith<WeatherInformationState> get copyWith =>
@@ -30,7 +31,10 @@ abstract class $WeatherInformationStateCopyWith<$Res> {
           $Res Function(WeatherInformationState) then) =
       _$WeatherInformationStateCopyWithImpl<$Res, WeatherInformationState>;
   @useResult
-  $Res call({WeatherInformation weatherInformation});
+  $Res call(
+      {Widget? weatherConditionImage,
+      String? maxTemperature,
+      String? minTemperature});
 }
 
 /// @nodoc
@@ -47,13 +51,23 @@ class _$WeatherInformationStateCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? weatherInformation = null,
+    Object? weatherConditionImage = freezed,
+    Object? maxTemperature = freezed,
+    Object? minTemperature = freezed,
   }) {
     return _then(_value.copyWith(
-      weatherInformation: null == weatherInformation
-          ? _value.weatherInformation
-          : weatherInformation // ignore: cast_nullable_to_non_nullable
-              as WeatherInformation,
+      weatherConditionImage: freezed == weatherConditionImage
+          ? _value.weatherConditionImage
+          : weatherConditionImage // ignore: cast_nullable_to_non_nullable
+              as Widget?,
+      maxTemperature: freezed == maxTemperature
+          ? _value.maxTemperature
+          : maxTemperature // ignore: cast_nullable_to_non_nullable
+              as String?,
+      minTemperature: freezed == minTemperature
+          ? _value.minTemperature
+          : minTemperature // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -67,7 +81,10 @@ abstract class _$$WeatherInformationStateImplCopyWith<$Res>
       __$$WeatherInformationStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({WeatherInformation weatherInformation});
+  $Res call(
+      {Widget? weatherConditionImage,
+      String? maxTemperature,
+      String? minTemperature});
 }
 
 /// @nodoc
@@ -83,13 +100,23 @@ class __$$WeatherInformationStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? weatherInformation = null,
+    Object? weatherConditionImage = freezed,
+    Object? maxTemperature = freezed,
+    Object? minTemperature = freezed,
   }) {
     return _then(_$WeatherInformationStateImpl(
-      weatherInformation: null == weatherInformation
-          ? _value.weatherInformation
-          : weatherInformation // ignore: cast_nullable_to_non_nullable
-              as WeatherInformation,
+      weatherConditionImage: freezed == weatherConditionImage
+          ? _value.weatherConditionImage
+          : weatherConditionImage // ignore: cast_nullable_to_non_nullable
+              as Widget?,
+      maxTemperature: freezed == maxTemperature
+          ? _value.maxTemperature
+          : maxTemperature // ignore: cast_nullable_to_non_nullable
+              as String?,
+      minTemperature: freezed == minTemperature
+          ? _value.minTemperature
+          : minTemperature // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -97,15 +124,22 @@ class __$$WeatherInformationStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$WeatherInformationStateImpl extends _WeatherInformationState {
-  const _$WeatherInformationStateImpl({required this.weatherInformation})
+  const _$WeatherInformationStateImpl(
+      {required this.weatherConditionImage,
+      required this.maxTemperature,
+      required this.minTemperature})
       : super._();
 
   @override
-  final WeatherInformation weatherInformation;
+  final Widget? weatherConditionImage;
+  @override
+  final String? maxTemperature;
+  @override
+  final String? minTemperature;
 
   @override
   String toString() {
-    return 'WeatherInformationState(weatherInformation: $weatherInformation)';
+    return 'WeatherInformationState(weatherConditionImage: $weatherConditionImage, maxTemperature: $maxTemperature, minTemperature: $minTemperature)';
   }
 
   @override
@@ -113,12 +147,17 @@ class _$WeatherInformationStateImpl extends _WeatherInformationState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WeatherInformationStateImpl &&
-            (identical(other.weatherInformation, weatherInformation) ||
-                other.weatherInformation == weatherInformation));
+            (identical(other.weatherConditionImage, weatherConditionImage) ||
+                other.weatherConditionImage == weatherConditionImage) &&
+            (identical(other.maxTemperature, maxTemperature) ||
+                other.maxTemperature == maxTemperature) &&
+            (identical(other.minTemperature, minTemperature) ||
+                other.minTemperature == minTemperature));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, weatherInformation);
+  int get hashCode => Object.hash(
+      runtimeType, weatherConditionImage, maxTemperature, minTemperature);
 
   @JsonKey(ignore: true)
   @override
@@ -130,12 +169,17 @@ class _$WeatherInformationStateImpl extends _WeatherInformationState {
 
 abstract class _WeatherInformationState extends WeatherInformationState {
   const factory _WeatherInformationState(
-          {required final WeatherInformation weatherInformation}) =
-      _$WeatherInformationStateImpl;
+      {required final Widget? weatherConditionImage,
+      required final String? maxTemperature,
+      required final String? minTemperature}) = _$WeatherInformationStateImpl;
   const _WeatherInformationState._() : super._();
 
   @override
-  WeatherInformation get weatherInformation;
+  Widget? get weatherConditionImage;
+  @override
+  String? get maxTemperature;
+  @override
+  String? get minTemperature;
   @override
   @JsonKey(ignore: true)
   _$$WeatherInformationStateImplCopyWith<_$WeatherInformationStateImpl>

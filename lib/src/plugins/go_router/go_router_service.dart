@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_training/src/ui/ui.dart';
-import 'package:flutter_training/src/utilities/utility.dart';
+import 'package:flutter_training/src/utilities/utilities.dart';
 import 'package:go_router/go_router.dart';
 
 class GoRouterService {

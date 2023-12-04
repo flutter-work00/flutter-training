@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: type=lint, duplicate_ignore
+// ignore_for_file: type=lint
 
 part of 'weather_forecast_request.dart';
 
@@ -10,9 +10,16 @@ part of 'weather_forecast_request.dart';
 
 _$WeatherForecastRequestImpl _$$WeatherForecastRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$WeatherForecastRequestImpl(
-      area: json['area'] as String,
-      date: json['date'] as String,
+    $checkedCreate(
+      r'_$WeatherForecastRequestImpl',
+      json,
+      ($checkedConvert) {
+        final val = _$WeatherForecastRequestImpl(
+          area: $checkedConvert('area', (v) => v as String),
+          date: $checkedConvert('date', (v) => v as String),
+        );
+        return val;
+      },
     );
 
 Map<String, dynamic> _$$WeatherForecastRequestImplToJson(

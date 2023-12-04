@@ -1,3 +1,7 @@
+import 'package:flutter_training/src/features/weather_forecast/domain/entities/entities.dart';
+
 abstract interface class WeatherForecastRemoteDataSource {
-  String fetchWeatherForecast({required String targetData});
+  WeatherInformation fetchWeatherForecast({
+    required WeatherForecastRequest weatherForecastRequest,
+  });
 }

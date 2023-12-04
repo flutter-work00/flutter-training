@@ -5,7 +5,7 @@ import 'package:flutter_training/src/features/weather_forecast/domain/domain.dar
 import 'package:flutter_training/src/features/weather_forecast/presentation/providers/providers.dart';
 import 'package:flutter_training/src/features/weather_forecast/presentation/state/state.dart';
 import 'package:flutter_training/src/ui/common_components/dialog/dialog.dart';
-import 'package:flutter_training/src/utilities/utility.dart';
+import 'package:flutter_training/src/utilities/utilities.dart';
 
 final weatherInformationControllerProvider =
     Provider.autoDispose<WeatherInformationController>(
