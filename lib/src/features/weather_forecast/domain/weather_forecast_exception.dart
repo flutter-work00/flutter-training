@@ -2,7 +2,7 @@ import 'package:flutter_training/src/utilities/constants/constant.dart';
 import 'package:flutter_training/src/utilities/exceptions/exceptions.dart';
 import 'package:yumemi_weather/yumemi_weather.dart';
 
-class WeatherForecastException implements AppException {
+abstract class WeatherForecastException implements AppException {
   WeatherForecastException({required this.code, required this.message});
   @override
   final String code;
