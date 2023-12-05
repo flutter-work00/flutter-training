@@ -20,7 +20,8 @@ class Result<T, R> with _$Result<T, R> {
 
   dynamic get unwrap => switch (this) {
         Success() => (this as Success).value,
-        Failure() => (this as Failure).exception,
+        // ignore: throw_of_invalid_type
+        Failure() => throw (this as Failure).exception,
         Result<T, R>() => null,
       };
 }
