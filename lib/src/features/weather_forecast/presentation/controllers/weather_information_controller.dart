@@ -1,34 +1,23 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_training/src/features/weather_forecast/application/providers/providers.dart';
-import 'package:flutter_training/src/features/weather_forecast/application/use_cases/use_case.dart';
+import 'package:flutter_training/src/features/weather_forecast/application/use_cases/use_cases.dart';
 import 'package:flutter_training/src/features/weather_forecast/domain/domain.dart';
-import 'package:flutter_training/src/features/weather_forecast/presentation/providers/providers.dart';
 import 'package:flutter_training/src/features/weather_forecast/presentation/state/state.dart';
 import 'package:flutter_training/src/ui/common_components/dialog/dialog.dart';
 import 'package:flutter_training/src/utilities/utilities.dart';
 
-final weatherInformationControllerProvider =
-    Provider.autoDispose<WeatherInformationController>(
-  (ref) => WeatherInformationController(
-    fetchWeatherForecastUsecase: ref.watch(fetchWeatherForecastUseCaseProvider),
-    forecastResultImageNotifier: ref.watch(weatherInformationProvider.notifier),
-  ),
-);
-
 class WeatherInformationController {
   WeatherInformationController({
     required FetchWeatherForecastUseCase fetchWeatherForecastUsecase,
-    required WeatherInformationNotifier forecastResultImageNotifier,
+    required WeatherInformationNotifier weatherInformationNotifier,
   })  : _fetchWeatherForecastUsecase = fetchWeatherForecastUsecase,
-        _forecastResultImageNotifier = forecastResultImageNotifier;
+        _weatherInformationNotifier = weatherInformationNotifier;
 
   final FetchWeatherForecastUseCase _fetchWeatherForecastUsecase;
-  final WeatherInformationNotifier _forecastResultImageNotifier;
+  final WeatherInformationNotifier _weatherInformationNotifier;
 
   void fetchWeatherForecast() {
     try {
       final weatherInformation = _fetchWeatherForecastUsecase.execute();
-      _forecastResultImageNotifier.saveWeatherInformation(
+      _weatherInformationNotifier.saveWeatherInformation(
         weatherInformation: weatherInformation,
       );
     } on WeatherForecastException catch (e) {

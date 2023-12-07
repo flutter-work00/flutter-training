@@ -7,6 +7,6 @@ final weatherInformationControllerProvider =
     Provider.autoDispose<WeatherInformationController>(
   (ref) => WeatherInformationController(
     fetchWeatherForecastUsecase: ref.watch(fetchWeatherForecastUseCaseProvider),
-    forecastResultImageNotifier: ref.watch(weatherInformationProvider.notifier),
+    weatherInformationNotifier: ref.watch(weatherInformationProvider.notifier),
   ),
 );
