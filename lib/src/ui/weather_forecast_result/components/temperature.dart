@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_training/src/utilities/utilities.dart';
 
-class TemperatureFlame extends StatelessWidget {
-  const TemperatureFlame({
+class Temperature extends StatelessWidget {
+  const Temperature({
     required Color textColors,
-    String? temperature,
+    required String? temperature,
     super.key,
   })  : _temperature = temperature ?? AppEmpty.temperature,
         _textColors = textColors;
+
+  factory Temperature.max({required String? temperature}) => Temperature(
+        textColors: weatherPageContext.colorTheme.maxTemperature!,
+        temperature: temperature,
+      );
+  factory Temperature.min({required String? temperature}) => Temperature(
+        textColors: weatherPageContext.colorTheme.minTemperature!,
+        temperature: temperature,
+      );
 
   final String _temperature;
   final Color _textColors;
