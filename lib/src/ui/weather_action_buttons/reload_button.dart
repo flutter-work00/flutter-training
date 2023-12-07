@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_training/src/features/weather_forecast/presentation/controllers/controllers.dart';
+import 'package:flutter_training/src/features/weather_forecast/presentation/providers/providers.dart';
 import 'package:flutter_training/src/ui/weather_action_buttons/weather_action_buttons.dart';
 import 'package:flutter_training/src/utilities/constants/constant.dart';
 
