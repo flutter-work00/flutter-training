@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_training/src/features/weather_forecast/presentation/providers/providers.dart';
-import 'package:flutter_training/src/ui/weather_forecast_result/weather_forecast_result.dart';
+import 'package:flutter_training/src/ui/weather_forecast/weather_forecast.dart';
 
-class ForecastResult extends StatelessWidget {
-  const ForecastResult({required GlobalKey temperatureTextKey, super.key})
-      : _temperatureTextKey = temperatureTextKey;
+class WeatherForecastResult extends StatelessWidget {
+  const WeatherForecastResult({
+    required GlobalKey temperatureTextKey,
+    super.key,
+  }) : _temperatureTextKey = temperatureTextKey;
 
   final GlobalKey _temperatureTextKey;
 

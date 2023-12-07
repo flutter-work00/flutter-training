@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_training/src/ui/weather_action_buttons/weather_action_buttons.dart'
-    as buttons;
-import 'package:flutter_training/src/ui/weather_forecast_result/weather_forecast_result.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_training/src/features/weather_forecast/presentation/providers/providers.dart';
+import 'package:flutter_training/src/plugins/go_router/go_router.dart';
+import 'package:flutter_training/src/ui/weather_forecast/weather_forecast.dart';
 
 class WeatherPage extends StatefulWidget {
   const WeatherPage({super.key});
@@ -64,12 +65,12 @@ class _WeatherConditionResult extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
-      child: ForecastResult(temperatureTextKey: _temperatureTextKey),
+      child: WeatherForecastResult(temperatureTextKey: _temperatureTextKey),
     );
   }
 }
 
-class _WeatherActionButtons extends StatelessWidget {
+class _WeatherActionButtons extends ConsumerWidget {
   const _WeatherActionButtons({
     required Offset temperatureTextPosition,
     required Size temperatureTextSize,
@@ -80,7 +81,7 @@ class _WeatherActionButtons extends StatelessWidget {
   final Size _temperatureTextSize;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Transform.translate(
       offset: Offset(
         _temperatureTextPosition.dx,
@@ -89,10 +90,17 @@ class _WeatherActionButtons extends StatelessWidget {
       child: SizedBox(
         height: _temperatureTextSize.height,
         width: _temperatureTextSize.width,
-        child: const Row(
+        child: Row(
           children: [
-            buttons.CloseButton(),
-            buttons.ReloadButton(),
+            WeatherActionButton.close(
+              pressedFunction: () =>
+                  GoRouterService.toLaunchPage(context: context),
+            ),
+            WeatherActionButton.reload(
+              pressedFunction: () => ref
+                  .read(weatherInformationControllerProvider)
+                  .fetchWeatherForecast(),
+            ),
           ],
         ),
       ),
